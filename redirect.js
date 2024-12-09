@@ -15,5 +15,7 @@ function hideFramerBadge() {
     observer.observe(document.body, { childList: true, subtree: true });
 }
 
-// Run the function after the redirect
-window.onload = hideFramerBadge;
+// Ensure the DOM is fully loaded before running the function
+document.addEventListener('DOMContentLoaded', () => {
+    hideFramerBadge();
+});
